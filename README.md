@@ -10,10 +10,18 @@ The target of this project is to apply Particle Filter to localize a lost car us
 
 ## Particle Filter Implementation
 
-1. move robot and take measurement
-2. take all the particles in the map do the same motion, then do the measurements too.
-3. Compare particle measurement to robot measurement, then calculate the weights. (still use gaussion distribution with sensor noise as std)
-4. resample particles based on weights.
+1. Initialize all the particles using GPS coordinates + position measurement noisy
+
+2. Move all the particles using constant velocity constant yaw rate model, then add position measurement noisy
+Note: 
+2.1 I think control noisy should be applid when using CTRV model, instead of imposing position noisy afterwards
+2.2 When yaw rate is zero, CTRV model has to be changed to constant velocity constant yaw angle model.
+
+3. Transfom sensor measurements from car local coordinates to map coordinates using PARTICLE position.
+
+4. Associate EACH measurment in EACH particle with its closest landmark, calculate probability for each measurment & landmark association, the product of all the probability of each particle will be its weight.
+
+5. Resample particles based on their weights, discrete_distribution is a perfect tool which can do the work automatically. 
 
 ## Result
 
