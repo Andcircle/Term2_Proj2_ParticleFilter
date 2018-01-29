@@ -10,6 +10,10 @@ The target of this project is to apply Particle Filter to localize a lost car us
 
 ## Particle Filter Implementation
 
+1. move robot and take measurement
+2. take all the particles in the map do the same motion, then do the measurements too.
+3. Compare particle measurement to robot measurement, then calculate the weights. (still use gaussion distribution with sensor noise as std)
+4. resample particles based on weights.
 
 ## Result
 
@@ -20,8 +24,7 @@ Clone this repo and perform
 ```
 mkdir build && cd build
 cmake ../src/  && make
-./ExtendedKF 
-./ExtendedKF 
+./particle_filter 
 ```
 
 
