@@ -4,7 +4,7 @@ Localization Using Particle Filter
 The target of this project is to apply Particle Filter to localize a lost car in a given map using C++ (Eclipse IDE).
 
 ## Content of this repo
-- `scr` source code directory:
+- `src` source code directory:
   - `main.cpp` - communicate with simulation tool, call functions to run the Particle Filter and calculate Error
   - `particle_filter.cpp` - initializes the Particle Filter, execute predict, update and resample function of Particle Filter
 
