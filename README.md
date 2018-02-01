@@ -1,4 +1,4 @@
-# Term2_Proj2_ParticleFilter
+# Term2_Proj3_ParticleFilter
 Localization Using Particle Filter
 
 The target of this project is to apply Particle Filter to localize a lost car in a given map using C++ (Eclipse IDE).
